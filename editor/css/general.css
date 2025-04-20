@@ -1,0 +1,170 @@
+.marked-element {
+    outline: 2px dashed #00BFFF;
+    background-color: rgba(7, 128, 242, 0.05);
+}
+
+.marked-element-temp {
+    outline: 3px dashed #F2AB07;
+    background-color: rgba(242, 168, 7, 0.26);
+}
+
+@keyframes slideRight {
+    from {
+        left: -50px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+.mark-successfully {
+    outline: 3px dashed #49BE17;
+    background-color: rgba(38, 255, 0, 0.1);
+}
+
+.marked-element, .marked-element-temp {
+    transition: outline 0.05s linear;
+}
+
+[locator-data-tooltip] {
+    position: absolute;
+    z-index: 1000;
+}
+
+[locator-data-tooltip]:before {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -10px;
+    padding: 2px 4px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: #fff;
+    content: attr(locator-data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+[locator-data-tooltip]:after {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid #000;
+    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+}
+
+
+.video {
+    width: 50%;
+    height: auto;
+}
+
+
+.draggable {
+    position: absolute;
+    /* background-image: url("chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/bluebot.gif"); */
+    width: 315px;
+    height: 346px;
+    z-index: 99999999999999999;
+    background-color: transparent;
+    cursor: move;
+}
+
+.balao-fala {
+    background-color: #3873a5;
+    background-image: url("chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/balao.png");
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    left: 252px;
+    bottom: -60;
+    bottom: -90;
+    top: 20px;
+}
+
+.balao-fala::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background-color: #3873a5;
+}
+
+/* #loading {
+    position: absolute;
+    background-image: url("chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/bluebot.gif");
+    width: 315px;
+    height: 346px;
+    z-index: 99999999999999999;
+    background-color: transparent;
+    /* cursor: move; */
+
+
+#loading {
+    display: none;
+    /* esconde o loading por padrão */
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* define um fundo escuro para destacar o loading */
+    z-index: 9999;
+    /* garante que o loading fique acima de todos os outros elementos na página */
+}
+
+#input-pergunta {
+    margin-right: 4px;
+    margin-top: 10px;
+    height: 25px;
+    width: 60%;
+}
+
+#loading img {
+    display: block;
+    margin: auto;
+    /* centraliza o loading na tela horizontalmente e verticalmente */
+    /* background-image: url("chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/bluebot.gif"); */
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999999;
+}
+
+#pagina {
+    text-align: center;
+}
+
+
+
+/* 
+.balao-fala::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background-color: #3873a5;
+}
+ */

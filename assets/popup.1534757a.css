@@ -1,0 +1,1 @@
+body{font-size:100%}#app{display:flex;flex-direction:column;align-items:center;font-family:Roboto,Arial,"sans-serif"}#app>*{margin-bottom:.5em}.top{display:flex;justify-content:center;align-items:center}.top img{margin-right:1em;height:4em}.top span{font-size:3em}a{color:#00f;text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}

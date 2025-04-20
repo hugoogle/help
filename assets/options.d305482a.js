@@ -1,0 +1,1 @@
+import{d as o,o as s,c as t,F as a,a as e,g as n}from"./runtime-dom.esm-bundler.648e5a1c.js";var p="/assets/logo.03d6d6da.png";const _=e("div",{class:"top"},[e("img",{alt:"Vue logo",src:p}),e("span",null,"Options")],-1),l=e("p",null,"Hello, world 2!",-1),r=o({name:"options",setup(c){return(i,d)=>(s(),t(a,null,[_,l],64))}});n(r).mount("#app");

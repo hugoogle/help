@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="google" value="notranslate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <title>HelpBlue</title>
+    <style>
+      body,
+      html {
+        overflow: hidden;
+      }
+      .wyp-iframe-loader {
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background-color: #fff;
+        z-index: 2147483646;
+      }
+      #loader {
+        background-color: #ccc;
+        height: 2px;
+        width: 200px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;
+        margin-top: 18px;
+        border-radius: 8px;
+      }
+      #loader i {
+        background-color: #1592e6;
+        width: 10%;
+        position: absolute;
+        height: 4px;
+        margin-top: -1px;
+        -webkit-transition: width 0.1s;
+        transition: width 0.1s;
+        border-radius: 8px;
+      }
+      .loading-files {
+        width: 130px;
+        height: 24px;
+        top: 50%;
+        color: #6a6a6a;
+        text-align: center;
+        font-size: 12px;
+        left: 50%;
+        position: fixed;
+        margin-left: -65px;
+        margin-top: -12px;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          Helvetica, Arial, sans-serif !important;
+        font-weight: 600;
+      }
+
+      .carregando-voice {
+        position: relative;
+        z-index: 999999999999;
+        width: 130px;
+        height: 24px;
+        top: 75%;
+        color: #f5f5f5;
+        text-align: center;
+        font-size: 30px;
+        left: 43%;
+        position: fixed;
+        margin-top: -12px;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          Helvetica, Arial, sans-serif !important;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body class="bl-bluesoft-help bl-blue-dis blue-flexible-inspector-active">
+    
+    <div id="loading"  width="400px">
+
+      <video  loop draggable autoplay loop width="350px" style="margin-top: 5%;">
+        <source src="chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/carregando.webm" type="video/webm">
+    </video>
+
+    <div class="carregando-voice">Carregando...aguarde!</div>
+    </div>
+
+
+       
+    </div>
+    <div class="wyp-iframe-loader">
+      <div id="loader"><i></i></div>
+      <div class="loading-files">Loading Editor</div>
+    </div>
+
+    <iframe id="iframe" class="yellow_pencil_iframe" tabindex="-1"></iframe>
+
+    <div id="ed-elt-tr"><ul></ul></div>
+
+    <div id="vsl-css-vi">
+      <div class="css-view-top">
+        <span class="yicon icon-filter"></span>
+        <div>HUGO DE LIMA FERREIRA</div>
+        <input
+          id="visual-rule-filter"
+          placeholder="Filter.."
+          type="text"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+        <div class="visual-manager-close"></div>
+      </div>
+      <div id="vsl-css-co"></div>
+    </div>
+
+    <span class="yicon icon-admin-collapse wyp-panel-show"></span>
+
+    <div class="responsive-right-handle"></div>
+    <div class="responsive-left-handle"></div>
+    <span class="responsive-add-breakpoint"
+      ><span class="yicon icon-plus"></span
+    ></span>
+    <div class="responsive-size-text">
+      <span class="device-size"></span>px and
+      <span class="media-control" data-code="max-width">smaller</span> screens
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalSummerNote">
+      <div class="modal-dialog modal-lg size-modal">
+
+    <div class="modal-content">
+      <div id="ajax-alert"></div>
+      <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+      <button type="button" class="close"aria-label="Close" data-dismiss="modal" >
+      <span aria-hidden="true">×</span>
+      </button>
+      </div>
+      <div class="modal-body">
+      <div>        
+
+        <label class="modal-titulo" for="input-field-titulo">Título:<span class="required">*</span>
+        </label>
+        <input type="text" id="input-field-titulo" name="titlulo"  class="input-modal" placeholder="Informe um título...">
+
+        <label class="modal-titulo">Posição do Modal:</label><span id="posicao-modal" class="posicao-modal">Baixo</span>
+        <label class="modal-titulo">Ordenação:</label><input id="ordenacao-modal" type="number" pattern="[0-9]"  min="0" max="100" class="input-modal"></input>
+        <input type="hidden" id="elemento" value="0"></input>
+        <input type="hidden" id="base-uri" value=""></input>
+
+      </div>
+
+
+
+     <br> 
+      <form method="post">
+        <textarea id="summernote" name="editordata"></textarea>
+      </form>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      <button type="button" class="btn btn-primary" id="btnHtmlCodeSalvar">Salvar</button>
+      <p class="p-size-summer">Redimencionar em <input class="range-size-summer" id="rangeVal" name="rangeVal"></p>
+      </div>
+
+<div><img src=""  id="myImage" alt=""></div>
+
+      
+      </div>
+
+    </div>
+  </div>
+
+    <div id="movido" class="ed-pnl wyp-disable-cancel ui-widget-content">
+      <div id="movedor" class="ed-pnl-top">
+        <a class="wf-close-btn-link" tabindex="-1"
+          ><span
+            data-toggle="tooltip"
+            data-placement="left"
+            title="Close Editor"
+            class="wyp-close-btn"
+          ></span
+        ></a>
+
+        <a class="wyp-button wyp-save-btn"
+          ><i
+            id="w-maximizar-painel"
+            class="fa fa-window-maximize fa-1x"
+            aria-hidden="true"
+          ></i
+        ></a>
+        <a
+          data-toggle="modal" 
+          data-target="#modalConfiguracaoPadrao"
+          data-placement="bottom"
+          title='Review Changes <span class="wyp-s-shortcut">(C)</span>'
+          class="wyp-button-manage"
+        ></a>
+
+        <div class="wyp-clear"></div>
+      </div>
+      <div id="property-responsive-menu"></div>
+      <div hidden="hidden"><input type="text" id="printElementoSelecionado"></div>>
+      <div hidden="hidden"><input type="text" id="bordaElementoSelecionado"></div>>
+      <div class="ed-pnl-inner">
+        <div class="wyp-csng-sec">
+          <div class="wyp-customizing-inner">
+            <div style="font-weight: bold; text-align: center">
+              Ajuda Bluesoft
+            </div>
+            <br />
+            <div style="font-weight: bold; text-align: center">
+              Menu
+            </div>
+            <input class="type-heading" id="pagina" style="width: 100%" disabled/><br />
+
+            <form id="form-pergunta">
+              <!-- <label for="input-pergunta" >Digite sua pergunta:</label> -->
+              <input type="text" id="input-pergunta" placeholder="Digite sua pergunta..." name="pergunta">
+              <button type="submit" class="btn-iniciar" id="btn-pesquisa-chatgpt">Pesquisar</button>
+          </form>
+          
+          <!-- <div>
+            <textarea name="" id="resultado-pergunta" cols="30" rows="10"></textarea>
+          </div> -->
+            <div class="wyp-clear"></div>
+          </div>
+          <div class="wyp-customizing-inner-url">
+            <br />
+            <div style="font-weight: bold; text-align: center">
+              <!-- Pagina url que será exibido o fluxo -->
+            </div>
+            <div
+              id="customizing-mode"
+              class="wyp-type-menu-link"
+              style="text-align: center"
+            >
+              <span class="type-heading" title="My tip" id="menu-title">
+                <!-- http:\\...\wms-gerenciamento-cargas -->
+              </span>
+            </div>
+            <div style="text-align: center; padding: 8px 0px 0px 0px">
+
+              <button id="iniciar-fluxo-help" class="btn-iniciar">Iniciar&nbsp;➤</button>
+              <button type="button" hidden="true" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">openModal</button>
+              <button id="btn-gravar">Gravar</button>
+              <button id="btn-exibir">Exibir</button>
+            </div>
+            <br />
+
+            <div id="customizing-mode" class="wyp-type-menu-link" style="text-align: center">
+              <span class="type-heading" title="My tip"></span><div class="blue-hand"></div>
+            </div>
+
+            <div class="wyp-clear"></div>
+            <div id="elemento-point">Nenhum elemento selecionado!</div>
+            <!-- <div id="tabela">Teste -->
+
+              <!-- <div id="elementsTable">
+                <table id="elementsTableHeader" class="">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                           <th>Tag</th>
+                            <th>Descrição</th>
+                           <th>XPath</th>
+                           <th>CssSelector</th> 
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>IntroJSBluesoft</th>
+                            <th>Posição</th>
+    
+                            <th>Inicio</th>
+                            <th>Fim</th> 
+                            <th>Clicavél</th>    
+                            <th></th>
+    
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+    
+                <table id="elementsTable" class="table table-sm table-hover">
+                    <tbody id='elementsTableBody'>
+                        <tr>
+                        <th>title</th>
+                        <td>value 1</td>
+                        <td>value 1</td>
+                        <td>value 1</td>
+                        <td><input type="text"></td>
+                        <td>value 1</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div> -->
+
+
+
+        </div>
+        <div class="wyp-panel-no-selection">
+          <div class="starter-notice">
+            <div class="wyp-hand"></div>
+            <div class="wyp-hand-after"></div>
+            <!-- <div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/JXzHrJ8NrZM?wmode=transparent" allowfullscreen allowtransparency="true"></iframe>
+            </div> -->
+           <!-- <div class="video"><img src="chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/bluebot.gif"></div>  -->
+
+            Clique sobre o botão inciar, em seguida
+            selecione o(s) elemento(s) na pagina.
+          </div>
+        </div>
+
+        <div class="ed-pnl-footer">
+          <div class="flex-container">
+            <label id="pausarInspencao_label" class="switch switch-left-right">
+              <input
+                id="pausarInspencaoCheckbox"
+                class="switch-input"
+                type="checkbox"
+              />
+              <span
+                class="switch-label"
+                data-on="Pausado"
+                data-off="Pausar"
+              ></span>
+              <span class="switch-handle"></span>
+            </label>
+
+            <label id="markAllCheckbox_label" class="switch switch-left-right">
+              <input
+                id="markAllCheckbox"
+                class="switch-input"
+                type="checkbox"
+              />
+              <span
+                class="switch-label"
+                data-on="Marcados"
+                data-off="Marcados"
+              ></span>
+              <span class="switch-handle"></span>
+            </label>
+          </div>
+
+          <h3>
+            <a
+              tabindex="-1"
+              target="_blank"
+              href="https://ajuda.bluesoft.com.br/"
+              >User Guilding</a
+            >
+            /
+            <a
+              tabindex="-1"
+              target="_blank"
+              href="https://ajuda.bluesoft.com.br/"
+              >V 1.0.0</a
+            >
+          </h3>
+          <span
+            class="yicon icon-admin-collapse wyp-panel-hide"
+            data-toggle="tooltip"
+            data-placement="left"
+            title='Hide Panels <span class="wyp-shortcut-char">(H)</span>'
+          ></span>
+        </div>
+      </div>
+
+      <div class="draggable">
+        <div style="position: relative;">
+          <!-- <label class="balao-fala" id="balao-fala">...</label>  -->
+          <!-- <video loop autoplay loop  width="60%" style="
+          margin-left: 50px;
+          margin-top: 30px;
+          position: absolute;
+          bottom: 540px;">
+            <source src="chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/audioBot.webm" type="video/webm">
+          </video> -->
+         
+<!-- <video loop autoplay loop  width="70%">
+  <source src="chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/audioBot.webm" type="video/webm">
+</video> -->
+
+<video loop draggable autoplay loop  width="100%">
+  <source src="chrome-extension://cibffnhhlfippmhdmdkcfecncoaegdkh/assets/images/blue9.webm" type="video/webm">
+</video>
+</div>
+
+
+
+
+      </div>
+      <div id="yellow-pencil-iframe-data">
+        <!-- <style class="wyp-inline-data" id="wyp-styles-area" data-source-mode="global"></style><style class="wyp-inline-data" data-source-mode="template"></style><style class="wyp-inline-data" data-source-mode="single"></style><div id="wyp-animate-data"><style></div> -->
+      </div>
+    </div>
+
+
+
+
+    <style id="iframe-general-style"></style>
+
+
+
+
+    <div id="footer">
+      <div class="flex-center passo">
+
+        <div class="flex-end flex-espacamento-left">
+
+        <label for="cars">Passos criados:</label>
+        <div class="center">
+            <select name="fluxo" id="fluxos" class="flex-margin-lr passo passo-criados"  placeholder="Selecione um passo">
+                <option value="criar">Não há passos</option>
+            </select>
+          </div>
+            <button class="btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success" id="btnHtmlCodeEditar">EDITAR PASSO
+          <i class="fa fa-solid fa-pencil fa-1x btn-custom-finalizar"></i>
+        </button> 
+        <button class="btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success" id="btnHtmlCodeExcluir">EXCLUIR PASSO
+          <i class="fa fa-trash-o fa-1x btn-custom-finalizar" aria-hidden="true" ></i>
+        </button> 
+
+        </div>
+
+        <div class="flex-end">
+
+          <button class="btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success">CRIAR NOVO FLUXO
+            <i class="fa fa-plus-circle fa-1x btn-custom-finalizar"></i>
+          </button> 
+
+          <button class="btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success">FINALIZAR
+            <i class="fa fa-check fa-1x btn-custom-finalizar"> </i>
+          </button>
+        </div>
+
+      </div>
+
+      
+      <!-- Modal -->
+<div class="modal fade" id="modalConfiguracaoPadrao" tabindex="-1" role="dialog" aria-labelledby="modalConfiguracaoPadraoTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div id="ajax-alert-config-padrao">
+      </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalConfiguracaoPadraoLongTitle">Configuração Padrão</h5>
+        <p id="resultado"></p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+   
+  <div class="flex-container configuracao-padrao">
+            <label class="configuracao-padrao-top">Print elemento selecionado? </label> <label id="printElemento_label" class="switch switch-left-right">
+             
+                <input id="printElementoCheckbox" class="switch-input" type="checkbox">
+              <span class="switch-label" data-on="Habilitado" data-off="Habilitar"></span>
+              <span class="switch-handle"></span>
+            </label>
+
+            
+          </div>
+          <div class="flex-container configuracao-padrao">
+            <label class="configuracao-padrao-top">Adicionar borda no elemento selecionado? </label> <label id="bordaElemento_label" class="switch switch-left-right">
+             
+                <input id="bordaElementoCheckbox" class="switch-input" type="checkbox">
+              <span class="switch-label" data-on="Habilitado" data-off="Habilitar"></span>
+              <span class="switch-handle"></span>
+            </label>
+
+            
+          </div>
+  <hr>
+  <h5>Definições da barra de ferramentas</h5>
+
+  <div class="flex-container configuracao-padrao">
+  <label class="configuracao-padrao-top">Fixar barra de ferramenta a direita? </label> <label id="barraFerramenta_label" class="switch switch-left-right">
+             
+    <input id="barraFerramentaCheckbox" class="switch-input" type="checkbox">
+  <span class="switch-label" data-on="Habilitado" data-off="Habilitar"></span>
+  <span class="switch-handle"></span>
+</label>
+</div>
+<p class="configuracao-padrao-principal">Tela de configuração principal.<button type="button" class="note-btn btn btn-light btn-sm" tabindex="-1" title="" aria-label="hello" data-original-title="hello"><i class="fa fa-cogs" aria-hidden="true"></i></button></p>
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" id="btnSalvarParametro" class="btn btn-primary">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+999
+
+      <!-- <div id="switchsDiv">
+        <label class="switch switch-left-right">
+          <input id="turnOnOffCheckbox" class="switch-input" type="checkbox" />
+          <span class="switch-label" data-on="On" data-off="Off"></span>
+          <span class="switch-handle"></span>
+        </label>
+      </div> -->
+    </div>
+
+
+
+
+    <link rel="manifest" src=”../../../editor/” crossorigin="use-credentials" />
+    <!-- <script type="module" src="../../../editor/js/controller/usuario-controller.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.introjs-helperNumberLayer {
+    position: absolute;
+    top: -8px;
+    left: -10px;
+    z-index: 9999999999 !important;
+    padding: 2px;
+    font-family: Arial, verdana, tahoma;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: #31708f;
+    /* background-image: -webkit-linear-gradient(top, #31708f 0%, #31708f 100%); */
+    width: 68px;
+    height: 23px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 11px;
+    box-shadow: 0px 1px 12px 3px;
+}

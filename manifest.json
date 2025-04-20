@@ -1,0 +1,73 @@
+{
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_title": "Bluebot help - popup!",
+    "default_icon": {
+      "16": "/icons/icons-16.png",
+      "48": "/icons/icons-48.png",
+      "128": "/icons/icons-128.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "name": "Extension 1",
+  "description": "Testing creating a chrome extension with vite, typescript, and vue",
+
+  "icons": {
+    "16": "/icons/icons-16.png",
+    "48": "/icons/icons-48.png",
+    "128": "/icons/icons-128.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhfDu9/sjlWbx6kGGQVH40z/TgfmDsB5ZS8xTvgCQQEGa1Jdsp+AQMtseSDYDMqt4gidUMS9bckl80ahmtwohbPRDZmUYhkxb8tQxBGEvqlzAV1UX6AfakCM/siWY3N5TyDMb1koxIU4xo5ofBwl1zTVw7RdLJmf7/XCvPE4KVzBGVQ9QdmK6lpU8fE3f6BJk81dg6oxS+makNFoZ0HqHZqorgQRmkA4L2eTEzkodAFbcJO4hZBnE++z7RBkbUMGID6jnuORFgaWgQLO0LIaJevUDDBveU0WY53KV2gObb+UGDyK13FSAgg1ZWPmXKXLKPbazCY1wrFub3TtNzAW+wwIDAQAB",
+  "manifest_version": 3,
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "notifications",
+    "http://*/*",
+    "https://*/*",
+    "declarativeContent"
+  ],
+
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "7.5.5",
+
+  "options_page": "options/index.html",
+  "content_scripts": [
+    {
+      "js": ["content-script.js"],
+      "css": ["editor/css/general.css"],
+      "matches": ["<all_urls>"],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["\u003Call_urls>"],
+      "css": ["sweet-alert-2.min.css"],
+      "resources": [
+        "clone/*",
+        "editor/*",
+        "editor/content-script.js",
+        "editor/css/general.css",
+        "lib/introjs/*",
+        "editor/js/service/usuario-service.js",
+        "assets/images/blue9.webm",
+        "assets/images/audioBot.webm",
+        "assets/images/balao.png",
+        "assets/images/bluebot.gif",
+        "assets/images/menu.webm",
+        "assets/images/menu.png",
+        "assets/images/carregando.webm",
+        "https://cdn.jsdelivr.net/npm/sweetalert2@10.9.1/dist/sweetalert2.min.css",
+        "https://cdn.jsdelivr.net/npm/sweetalert2@10.9.1/dist/sweetalert2.all.min.js"
+      ]
+    }
+  ]
+}
